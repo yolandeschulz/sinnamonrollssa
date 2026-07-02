@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sinnamon Rolls SA | Gourmet Cinnamon Rolls Pretoria</title>
+
+  <!-- Open Graph / WhatsApp / Social Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sinnamonrollssa.netlify.app/" />
+  <meta property="og:title" content="Sinnamon Rolls SA — Sinfully Good Cinnamon Rolls, Pretoria" />
+  <meta property="og:description" content="Gourmet, dessert-inspired cinnamon rolls baked fresh to order in Pretoria. Pre-order online. Pick up Friday or Saturday." />
+  <meta property="og:image" content="https://sinnamonrollssa.netlify.app/images/biscoff.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="description" content="Gourmet, dessert-inspired cinnamon rolls baked fresh to order in Pretoria. Pre-order online. Pick up Friday or Saturday." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:    #fdf8f0;
+      --parchment:#f0e0c0;
+      --caramel:  #c9923a;
+      --cinnamon: #8b5230;
+      --dark:     #2e1a0e;
+      --espresso: #1a0d05;
+      --frosting: #fefcf7;
+      --muted:    #8a6a4a;
+      --logo-bg:  #e8d5b0;
+      --gold:     #d4a855;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 70px;
+      background: rgba(26,13,5,0.97);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-decoration: none;
+    }
+
+    /* Circular logo badge - faithful to the real Sinnamon Rolls logo */
+    .nav-logo-badge {
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      background: #e8d5b0;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .nav-logo-badge svg { width: 50px; height: 50px; display: block; }
+
+    .nav-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.1;
+    }
+
+    .nav-logo-text span {
+      display: block;
+      font-size: 0.62rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--caramel);
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+    }
+
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #c8a882;
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* Cart button in nav */
+    .cart-nav-btn {
+      position: relative;
+      background: var(--cinnamon);
+      border: none;
+      color: var(--frosting);
+      padding: 9px 18px;
+      border-radius: 4px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .cart-nav-btn:hover { background: var(--caramel); color: var(--dark); }
+
+    .cart-count {
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: none;
+    }
+
+    .cart-count.visible { display: flex; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 6% 70px;
+      background:
+        linear-gradient(to right, rgba(253,248,240,0.95) 0%, rgba(253,248,240,0.80) 50%, rgba(253,248,240,0.20) 100%),
+        url('https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=1600&auto=format&fit=crop&q=80') center/cover no-repeat;
+    }
+
+    .hero-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 2rem;
+    }
+
+    .hero-inner { max-width: 520px; flex-shrink: 0; }
+
+    .hero-logo-big {
+      flex-shrink: 0;
+      width: clamp(200px, 28vw, 340px);
+      height: clamp(200px, 28vw, 340px);
+      filter: drop-shadow(0 8px 32px rgba(46,26,14,0.18));
+      animation: logo-float 6s ease-in-out infinite;
+    }
+
+    @keyframes logo-float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 768px) {
+      .hero-layout { flex-direction: column-reverse; align-items: flex-start; }
+      .hero-logo-big { width: 140px; height: 140px; align-self: flex-end; }
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(201,146,58,0.12);
+      border: 1px solid var(--caramel);
+      color: var(--cinnamon);
+      font-size: 0.75rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-inner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      color: var(--dark);
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-inner h1 em { font-style: italic; color: var(--caramel); }
+
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: var(--cinnamon);
+      font-style: italic;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-inner p {
+      color: #5a3a20;
+      font-size: 1.05rem;
+      margin-bottom: 2.2rem;
+      max-width: 500px;
+      font-weight: 300;
+    }
+
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary { background: var(--cinnamon); color: var(--frosting); }
+    .btn-primary:hover { background: var(--caramel); color: var(--dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(160,82,45,0.4); }
+    .btn-outline { background: rgba(253,248,240,0.6); color: var(--cinnamon); border-color: var(--cinnamon); }
+    .btn-outline:hover { background: var(--cinnamon); color: var(--frosting); }
+
+    .hero-note {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #7a5c42;
+      font-size: 0.85rem;
+    }
+
+    .hero-note::before { content: ''; display: block; width: 32px; height: 1px; background: #7a5c42; }
+
+    /* ── FLAVOUR STRIP ── */
+    .flavor-strip { background: var(--cinnamon); overflow: hidden; padding: 13px 0; white-space: nowrap; }
+    .flavor-strip-inner { display: inline-block; animation: scroll-left 24s linear infinite; }
+    .flavor-strip span { color: var(--parchment); font-size: 0.83rem; letter-spacing: 1px; text-transform: uppercase; padding: 0 2rem; }
+    .flavor-strip span::before { content: '✦'; margin-right: 2rem; color: var(--gold); }
+
+    @keyframes scroll-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── DELIVERY CALLOUT ── */
+    /* ── DELIVERY CALLOUT ── */
+    .delivery-strip {
+      background: var(--espresso);
+      padding: 16px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .delivery-label {
+      color: #a08060;
+      font-size: 0.7rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .delivery-badges { display: flex; gap: 1rem; align-items: center; }
+    .delivery-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .delivery-badge.mrd { background: #5DC6D1; color: #111; }
+    .delivery-badge.ube { background: #06C167; color: #111; }
+    .cs-pill {
+      font-size: 0.58rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 3px;
+      background: rgba(0,0,0,0.14);
+      font-weight: 700;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 90px 5%; }
+
+    .section-tag {
+      display: block;
+      color: var(--cinnamon);
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      color: var(--dark);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-sub { color: var(--muted); max-width: 520px; font-size: 1rem; }
+
+    /* ── HOW IT WORKS ── */
+    #how { background: var(--dark); color: var(--frosting); }
+    #how .section-tag { color: var(--gold); }
+    #how .section-title { color: var(--frosting); }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      max-width: 1300px;
+      margin: 3rem auto 0;
+    }
+
+    @media (max-width: 900px) {
+      .steps-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    }
+
+    .step {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 2rem 1.8rem;
+    }
+
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--cinnamon);
+      opacity: 0.6;
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+
+    .step h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--gold); margin-bottom: 0.5rem; }
+    .step p { font-size: 0.9rem; color: #a08060; }
+
+    .cutoff-banner {
+      max-width: 1100px;
+      margin: 2.5rem auto 0;
+      background: rgba(212,148,74,0.12);
+      border: 1px solid var(--caramel);
+      border-radius: 6px;
+      padding: 1.2rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--gold);
+      font-size: 0.95rem;
+    }
+
+    .cutoff-banner strong { color: var(--frosting); }
+
+    /* ── ORDER SECTION ── */
+    #order { background: var(--cream); padding-top: 80px; }
+
+    .order-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    /* Pickup bar */
+    .pickup-bar {
+      background: var(--frosting);
+      border: 1.5px solid var(--parchment);
+      border-radius: 8px;
+      padding: 1.4rem 1.8rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pickup-bar label {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--dark);
+      white-space: nowrap;
+    }
+
+    .pickup-bar select, .pickup-bar input[type="date"] {
+      padding: 9px 14px;
+      border: 1.5px solid var(--parchment);
+      border-radius: 4px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      color: var(--dark);
+      background: var(--cream);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .pickup-bar select:focus, .pickup-bar input[type="date"]:focus { border-color: var(--caramel); }
+
+    .pickup-status {
+      font-size: 0.82rem;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+      background: #f5ede0;
+      color: var(--caramel);
+    }
+
+    /* Menu tabs */
+    .menu-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 7px 18px;
+      border-radius: 20px;
+      border: 1.5px solid var(--parchment);
+      background: var(--frosting);
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--cinnamon);
+      border-color: var(--cinnamon);
+      color: var(--frosting);
+    }
+
+    /* Menu grid */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .menu-card {
+      background: var(--frosting);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1.5px solid var(--parchment);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .menu-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(160,82,45,0.12); }
+    .menu-card.sold-out { opacity: 0.55; }
+
+    .menu-card-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+
+    .menu-card-body { padding: 1.2rem 1.4rem 1.4rem; }
+
+    .menu-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.3rem; }
+
+    .menu-card-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--dark);
+    }
+
+    .badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+
+    .badge-popular { background: #fff3e0; color: var(--cinnamon); }
+    .badge-new     { background: #f5ede0; color: var(--caramel); }
+    .badge-seasonal{ background: #fce4ec; color: #c2185b; }
+    .badge-sold    { background: #f5f5f5; color: #9e9e9e; }
+
+    .menu-card-body p { font-size: 0.83rem; color: var(--muted); margin: 0.4rem 0 1rem; line-height: 1.5; }
+
+    .menu-card-footer { display: flex; align-items: center; justify-content: space-between; }
+
+    .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--cinnamon);
+    }
+
+    .price small { font-family: 'Lato', sans-serif; font-size: 0.72rem; color: var(--muted); font-weight: 400; }
+
+    /* Add to cart controls */
+    .qty-control {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border: 1.5px solid var(--parchment);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .qty-btn {
+      width: 32px; height: 32px;
+      background: var(--cream);
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark);
+      transition: background 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qty-btn:hover { background: var(--parchment); }
+
+    .qty-display {
+      width: 34px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--dark);
+      background: var(--frosting);
+      border: none;
+      outline: none;
+    }
+
+    .add-btn {
+      background: var(--cinnamon);
+      color: var(--frosting);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .add-btn:hover { background: var(--dark); }
+    .add-btn:disabled { background: #ccc; cursor: not-allowed; }
+
+    /* ── CART SIDEBAR ── */
+    .cart-sidebar {
+      position: sticky;
+      top: 90px;
+      background: var(--frosting);
+      border: 1.5px solid var(--parchment);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .cart-header {
+      background: var(--dark);
+      color: var(--gold);
+      padding: 1.2rem 1.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cart-header span { font-family: 'Lato', sans-serif; font-size: 0.8rem; color: #a08060; }
+
+    .cart-empty {
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .cart-empty-icon { font-size: 2.5rem; display: block; margin-bottom: 0.8rem; }
+    .cart-empty p { font-size: 0.9rem; }
+
+    .cart-items { padding: 1rem 1.5rem; max-height: 300px; overflow-y: auto; }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--parchment);
+    }
+
+    .cart-item:last-child { border-bottom: none; }
+
+    .cart-item-name {
+      flex: 1;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .cart-item-name small { display: block; font-weight: 400; color: var(--muted); font-size: 0.78rem; }
+
+    .cart-item-qty {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .cart-qty-btn {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      border: 1px solid var(--parchment);
+      background: var(--cream);
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+    }
+
+    .cart-qty-btn:hover { background: var(--cinnamon); color: var(--frosting); border-color: var(--cinnamon); }
+
+    .cart-item-price { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--cinnamon); font-weight: 700; min-width: 55px; text-align: right; }
+
+    .cart-footer {
+      border-top: 1.5px solid var(--parchment);
+      padding: 1.2rem 1.5rem;
+    }
+
+    .cart-totals { margin-bottom: 1rem; }
+
+    .cart-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .cart-row.total {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--dark);
+      font-family: 'Playfair Display', serif;
+      border-top: 1px solid var(--parchment);
+      padding-top: 0.6rem;
+      margin-top: 0.6rem;
+    }
+
+    /* Checkout form inside cart */
+    .checkout-form {
+      display: none;
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .checkout-form.visible { display: block; }
+
+    .cf-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--dark);
+      display: block;
+      margin-bottom: 0.2rem;
+      margin-top: 0.8rem;
+    }
+
+    .cf-input, .cf-select {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1.5px solid var(--parchment);
+      border-radius: 4px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.88rem;
+      color: var(--dark);
+      background: var(--cream);
+      outline: none;
+    }
+
+    .cf-input:focus, .cf-select:focus { border-color: var(--caramel); }
+
+    .wa-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 13px;
+      background: #25d366;
+      color: var(--frosting);
+      border: none;
+      border-radius: 6px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 1.2rem;
+      transition: background 0.2s;
+    }
+
+    .wa-btn:hover { background: #1da851; }
+    .wa-btn:disabled { background: #ccc; cursor: not-allowed; }
+
+    .checkout-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--cinnamon);
+      color: var(--frosting);
+      border: none;
+      border-radius: 6px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .checkout-btn:hover { background: var(--dark); }
+
+    .cart-note { font-size: 0.75rem; color: var(--muted); text-align: center; margin-top: 0.6rem; }
+
+    /* ── POLICY SECTION ── */
+    #policy { background: var(--frosting); padding: 80px 5%; }
+
+    .policy-intro {
+      max-width: 760px;
+      margin: 0 auto 3rem;
+    }
+
+    .policy-intro .section-sub { max-width: 100%; }
+
+    .policy-banner {
+      max-width: 760px;
+      margin: 0 auto 2.5rem;
+      background: #fff8f0;
+      border: 1.5px solid var(--caramel);
+      border-radius: 8px;
+      padding: 1.2rem 1.6rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      color: var(--dark);
+      font-size: 0.92rem;
+    }
+
+    .policy-banner .pi { font-size: 1.5rem; flex-shrink: 0; }
+
+    .policy-banner strong { color: var(--cinnamon); }
+
+    .accordion { max-width: 760px; margin: 0 auto; }
+
+    .accordion-item {
+      border: 1.5px solid var(--parchment);
+      border-radius: 8px;
+      margin-bottom: 0.8rem;
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 1.5rem;
+      cursor: pointer;
+      background: var(--cream);
+      transition: background 0.2s;
+      user-select: none;
+      gap: 1rem;
+    }
+
+    .accordion-header:hover { background: var(--parchment); }
+
+    .accordion-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--dark);
+      font-weight: 700;
+    }
+
+    .accordion-header .acc-num {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--cinnamon);
+      letter-spacing: 1px;
+      min-width: 28px;
+    }
+
+    .accordion-header .acc-icon {
+      font-size: 1.1rem;
+      color: var(--caramel);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+    }
+
+    .accordion-item.open .acc-icon { transform: rotate(45deg); }
+    .accordion-item.open .accordion-header { background: var(--parchment); }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .accordion-item.open .accordion-body { max-height: 600px; }
+
+    .accordion-content {
+      padding: 1.2rem 1.5rem 1.5rem;
+      border-top: 1px solid var(--parchment);
+    }
+
+    .accordion-content p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-bottom: 0.6rem;
+    }
+
+    .accordion-content p:last-child { margin-bottom: 0; }
+
+    .accordion-content ul {
+      margin: 0.5rem 0 0.8rem 1.2rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .accordion-content strong { color: var(--dark); }
+
+    .policy-note {
+      max-width: 760px;
+      margin: 2rem auto 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--parchment); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-img-wrap { position: relative; }
+
+    .about-img {
+      width: 100%;
+      border-radius: 8px;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      box-shadow: 0 16px 48px rgba(46,26,14,0.2);
+    }
+
+    .about-sticker {
+      position: absolute;
+      bottom: -18px; right: -16px;
+      background: var(--cinnamon);
+      color: var(--frosting);
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.8rem;
+      line-height: 1.3;
+      border: 4px solid var(--parchment);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .about-sticker em { font-size: 1.3rem; display: block; }
+
+    .about-text .section-sub { max-width: 100%; margin-bottom: 1rem; }
+
+    blockquote {
+      border-left: 3px solid var(--caramel);
+      padding: 0.8rem 1.2rem;
+      margin: 1.5rem 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--cinnamon);
+      background: rgba(212,148,74,0.08);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .tiktok-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--dark);
+      color: var(--gold);
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+      margin-top: 1rem;
+    }
+
+    .tiktok-tag:hover { background: var(--cinnamon); color: var(--frosting); }
+
+    /* ── CUSTOM ORDERS ── */
+    #custom {
+      background: var(--logo-bg);
+      padding: 90px 5%;
+    }
+
+    #custom .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #custom .section-title { color: var(--espresso); margin-bottom: 1rem; }
+
+    #custom .section-sub {
+      color: var(--cinnamon);
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
+    }
+
+    .occasion-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .occasion-card {
+      background: var(--frosting);
+      border: 1px solid rgba(201,146,58,0.25);
+      border-radius: 10px;
+      padding: 1.1rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      min-width: 110px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .occasion-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(46,26,14,0.12);
+      border-color: var(--caramel);
+    }
+
+    .occasion-icon { font-size: 1.8rem; }
+
+    .occasion-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--cinnamon);
+    }
+
+    .custom-box {
+      background: var(--frosting);
+      border: 1px solid rgba(201,146,58,0.3);
+      border-radius: 14px;
+      padding: 2.5rem 3rem;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .custom-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--dark);
+      margin-bottom: 1.2rem;
+    }
+
+    .custom-box ul {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .custom-box ul li {
+      padding: 0.45rem 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+      border-bottom: 1px solid rgba(201,146,58,0.12);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .custom-box ul li::before {
+      content: '✦';
+      color: var(--caramel);
+      font-size: 0.65rem;
+      flex-shrink: 0;
+    }
+
+    .custom-box .btn {
+      width: 100%;
+      text-align: center;
+      background: var(--dark);
+      color: var(--gold);
+      font-size: 1rem;
+      padding: 16px 24px;
+    }
+
+    .custom-box .btn:hover {
+      background: var(--espresso);
+      color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26,13,5,0.3);
+    }
+
+    @media (max-width: 600px) {
+      .custom-box { padding: 1.8rem 1.4rem; }
+      .occasion-grid { gap: 0.7rem; }
+      .occasion-card { min-width: 90px; padding: 0.9rem 1rem; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--espresso);
+      color: #a08060;
+      padding: 3.5rem 5% 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-brand p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.2rem; }
+
+    .footer-social { display: flex; gap: 0.7rem; }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #a08060;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+    }
+
+    .footer-social a:hover { background: var(--cinnamon); border-color: var(--cinnamon); color: var(--frosting); }
+
+    .footer-col h4 { font-family: 'Playfair Display', serif; color: var(--frosting); font-size: 0.95rem; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col ul a, .footer-col p { color: #a08060; text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-bottom small { font-size: 0.78rem; color: #5a3e2b; }
+
+    /* ── ORDER SUCCESS ── */
+    .order-success {
+      display: none;
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .order-success-icon { font-size: 3rem; display: block; margin-bottom: 1rem; }
+    .order-success h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--dark); margin-bottom: 0.5rem; }
+    .order-success p { color: var(--muted); font-size: 0.9rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .order-layout { grid-template-columns: 1fr; }
+      .cart-sidebar { position: static; }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger { display: flex; }
+
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 70px; left: 0; right: 0;
+        z-index: 300;
+        background: var(--espresso);
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem 0;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links li { border-bottom: 1px solid rgba(255,255,255,0.05); }
+      .nav-links a { display: block; padding: 0.9rem 5%; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .about-sticker { width: 85px; height: 85px; font-size: 0.72rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-badge">
+      <!-- Inline SVG logo matching the real Sinnamon Rolls circular design -->
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+        <!-- Beige circle background -->
+        <circle cx="50" cy="50" r="50" fill="#e8d5b0"/>
+        <!-- Halo above the S -->
+        <ellipse cx="19" cy="37" rx="7" ry="3" fill="none" stroke="#c9923a" stroke-width="1.8"/>
+        <!-- SINNAMON text -->
+        <text x="50" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="#2e1a0e" letter-spacing="1.5">SINNAMON</text>
+        <!-- Left dash, ROLLS, right dash -->
+        <line x1="14" y1="57" x2="26" y2="57" stroke="#c9923a" stroke-width="1.2"/>
+        <text x="50" y="59" text-anchor="middle" font-size="8" font-weight="400" fill="#2e1a0e" letter-spacing="3">ROLLS</text>
+        <line x1="74" y1="57" x2="86" y2="57" stroke="#c9923a" stroke-width="1.2"/>
+        <!-- Sinfully Good. in script style -->
+        <text x="50" y="70" text-anchor="middle" font-size="8" font-style="italic" fill="#2e1a0e" font-family="Georgia, serif">Sinfully Good.</text>
+      </svg>
+    </div>
+    <div class="nav-logo-text">
+      Sinnamon Rolls
+      <span>Gourmet · Artisanal · Pretoria</span>
+    </div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"  onclick="closeNav()">Home</a></li>
+      <li><a href="#how"   onclick="closeNav()">How It Works</a></li>
+      <li><a href="#order" onclick="closeNav()">Order</a></li>
+      <li><a href="#custom" onclick="closeNav()">Custom Orders</a></li>
+      <li><a href="#policy" onclick="closeNav()">Policy</a></li>
+      <li><a href="#about" onclick="closeNav()">About</a></li>
+    </ul>
+    <button class="cart-nav-btn" onclick="scrollToOrder()">
+      🍥 My Order
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="home">
+  <div class="hero-layout">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">🍂 Gourmet · Dessert Inspired · Artisanal · Pre-order Only</div>
+      <h1>The <em>Sinfully</em><br/>Good Roll.</h1>
+      <p class="hero-tagline">Made just for you, baked with love.</p>
+      <p>Pillowy soft, gourmet cinnamon rolls — dessert-inspired, artisanally made, baked fresh to order. No shortcuts. No frozen dough. Just real butter, real flavour, and a little bit of sin in every bite.</p>
+      <div class="hero-ctas">
+        <a href="#order" class="btn btn-primary">Order Online 🍥</a>
+        <a href="https://wa.me/27825630046?text=Hi!%20I'd%20like%20to%20order%20Sinnamon%20Rolls%20please%20🍥" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Us</a>
+      </div>
+      <p class="hero-note">Orders close Thursday. Pick up Friday or Saturday in Pretoria.</p>
+    </div>
+    <!-- Big logo floating on the right -->
+    <svg class="hero-logo-big" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+      <circle cx="50" cy="50" r="50" fill="#e8d5b0"/>
+      <ellipse cx="19" cy="37" rx="7" ry="3" fill="none" stroke="#c9923a" stroke-width="1.8"/>
+      <text x="50" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="#2e1a0e" letter-spacing="1.5">SINNAMON</text>
+      <line x1="14" y1="57" x2="26" y2="57" stroke="#c9923a" stroke-width="1.2"/>
+      <text x="50" y="59" text-anchor="middle" font-size="8" font-weight="400" fill="#2e1a0e" letter-spacing="3">ROLLS</text>
+      <line x1="74" y1="57" x2="86" y2="57" stroke="#c9923a" stroke-width="1.2"/>
+      <text x="50" y="70" text-anchor="middle" font-size="8" font-style="italic" fill="#2e1a0e" font-family="Georgia, serif">Sinfully Good.</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ── FLAVOUR STRIP ── -->
+<div class="flavor-strip">
+  <div class="flavor-strip-inner">
+    <span>Lotus Biscoff</span><span>Peppermint Crisp</span><span>Classic Cinnamon</span>
+    <span>Monthly Limited Edition</span><span>Gourmet · Dessert Inspired · Artisanal</span><span>Pretoria, South Africa</span>
+    <span>Lotus Biscoff</span><span>Peppermint Crisp</span><span>Classic Cinnamon</span>
+    <span>Monthly Limited Edition</span><span>Gourmet · Dessert Inspired · Artisanal</span><span>Pretoria, South Africa</span>
+  </div>
+</div>
+
+<!-- ── HOW IT WORKS ── -->
+<section id="how">
+  <div style="max-width:1100px;margin:0 auto;">
+    <span class="section-tag">The Process</span>
+    <h2 class="section-title" style="color:var(--frosting);">How Pre-Ordering Works</h2>
+    <p class="section-sub" style="color:#c8a882;">We bake in small batches — every roll is fresh, gooey, and made just for you. Pre-orders only, limited quantities each week.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Pick a Flavour</h3>
+      <p>Browse this week's menu. New flavours drop every week — follow us on TikTok so you never miss a drop.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Add to Cart</h3>
+      <p>Choose your boxes, quantities, and pick up day. Orders close <strong style="color:var(--gold)">Thursday</strong> once we sell out, that's a wrap!</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Send via WhatsApp</h3>
+      <p>Your order goes straight to us on WhatsApp. We'll confirm within a few hours with your pick up details.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h3>Pay via SnapScan</h3>
+      <p>Once we confirm your order, pay quickly and securely using <strong style="color:var(--gold)">SnapScan</strong>. Scan the QR code on the website or we'll send it on WhatsApp.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <h3>Pick Up Fresh</h3>
+      <p>Collect your warm, freshly baked rolls <strong style="color:var(--gold)">Friday or Saturday</strong> in Pretoria. Address confirmed on your order.</p>
+    </div>
+  </div>
+  <div class="cutoff-banner">
+    <span style="font-size:1.4rem;">⏰</span>
+    <div><strong>Order cutoff: Thursday</strong> · Pick up: <strong>Friday & Saturday</strong> · <strong>Pretoria, Gauteng</strong> · Limited batches weekly.</div>
+  </div>
+</section>
+
+<!-- ── DELIVERY CALLOUT ── -->
+<div class="delivery-strip">
+  <span class="delivery-label">🛵 Coming soon on</span>
+  <div class="delivery-badges">
+
+    <span class="delivery-badge mrd">
+      <svg height="18" viewBox="0 0 60 22" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="17" font-family="Arial Black, Arial" font-weight="900" font-size="17" fill="#0a2540">Mr D</text>
+      </svg>
+    </span>
+    <span class="delivery-badge ube">
+      <svg height="18" viewBox="0 0 90 22" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="17" font-family="Arial, Helvetica" font-weight="700" font-size="14" fill="#000">Uber Eats</text>
+      </svg>
+    </span>
+
+  </div>
+</div>
+
+<!-- ── ORDER ── -->
+<section id="order">
+  <div style="max-width:1200px;margin:0 auto 2rem;">
+    <span class="section-tag">Online Ordering</span>
+    <h2 class="section-title">This Week's Menu</h2>
+    <p class="section-sub">Select your flavour, add to cart, and send your order — we'll confirm via WhatsApp. Each roll is individually packaged, freshly baked to order.</p>
+  </div>
+
+  <div class="order-layout">
+    <!-- LEFT: menu -->
+    <div>
+      <!-- Pickup selector -->
+      <div class="pickup-bar">
+        <label>🗓 Pick up day:</label>
+        <select id="pickupDay" onchange="updatePickup()">
+          <option value="">Select day</option>
+          <option value="Friday morning">Friday (10am – 1pm)</option>
+          <option value="Friday afternoon">Friday (4pm – 6pm)</option>
+          <option value="Saturday">Saturday (9am – 12pm)</option>
+        </select>
+        <div class="pickup-status" id="pickupStatus">Select a day to order</div>
+      </div>
+
+      <!-- Category tabs -->
+      <div class="menu-tabs">
+        <button class="tab-btn active" onclick="filterMenu('all', this)">All</button>
+        <button class="tab-btn" onclick="filterMenu('classic', this)">Classic</button>
+        <button class="tab-btn" onclick="filterMenu('indulgent', this)">Indulgent</button>
+        <button class="tab-btn" onclick="filterMenu('box', this)">Custom Boxes</button>
+        <button class="tab-btn" onclick="filterMenu('seasonal', this)">Seasonal</button>
+      </div>
+
+      <!-- Menu items -->
+      <div class="menu-grid" id="menuGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- RIGHT: cart -->
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <span>🛒 Your Order</span>
+        <span id="cartItemCount">0 items</span>
+      </div>
+
+      <!-- Empty state -->
+      <div class="cart-empty" id="cartEmpty">
+        <span class="cart-empty-icon">🍥</span>
+        <p>Your cart is empty.<br/>Add some sinfully good rolls!</p>
+      </div>
+
+      <!-- Cart items -->
+      <div class="cart-items" id="cartItems" style="display:none;"></div>
+
+      <!-- Cart footer with totals + checkout -->
+      <div class="cart-footer" id="cartFooter" style="display:none;">
+        <div class="cart-totals">
+          <div class="cart-row"><span>Subtotal</span><span id="cartSubtotal">R0</span></div>
+          <div class="cart-row"><span>Pick up</span><span>Free</span></div>
+          <div class="cart-row total"><span>Total</span><span id="cartTotal">R0</span></div>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn" onclick="showCheckout()">Proceed to Checkout →</button>
+        <p class="cart-note">Free pick up · Pretoria only</p>
+      </div>
+
+      <!-- Checkout form -->
+      <div class="checkout-form" id="checkoutForm">
+        <label class="cf-label">Your Name *</label>
+        <input class="cf-input" id="cfName" type="text" placeholder="Full name" />
+
+        <label class="cf-label">WhatsApp Number *</label>
+        <input class="cf-input" id="cfPhone" type="tel" placeholder="+27 82 000 0000" />
+
+        <label class="cf-label">Pick up Slot *</label>
+        <select class="cf-select" id="cfDay">
+          <option value="">Select slot</option>
+          <option value="Friday morning (10am – 1pm)">Friday morning (10am – 1pm)</option>
+          <option value="Friday afternoon (4pm – 6pm)">Friday afternoon (4pm – 6pm)</option>
+          <option value="Saturday (9am – 12pm)">Saturday (9am – 12pm)</option>
+        </select>
+
+        <label class="cf-label">Notes / Allergies</label>
+        <input class="cf-input" id="cfNotes" type="text" placeholder="e.g. nut allergy, extra frosting..." />
+
+        <label style="display:flex;align-items:flex-start;gap:0.5rem;cursor:pointer;margin-top:0.8rem;">
+          <input type="checkbox" id="cfPolicy" style="margin-top:3px;accent-color:var(--cinnamon);flex-shrink:0;" />
+          <span style="font-size:0.78rem;color:var(--muted);line-height:1.4;">I have read and accept the <a href="#policy" style="color:var(--cinnamon);">pick up & order policy</a>, including the no refund rule for missed pick ups.</span>
+        </label>
+
+        <button class="wa-btn" onclick="sendViaWhatsApp()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Send Order on WhatsApp
+        </button>
+        <p class="cart-note" style="margin-top:0.5rem;">You'll receive a WhatsApp confirmation from us shortly.</p>
+        <button onclick="hideCheckout()" style="width:100%;margin-top:0.8rem;background:none;border:none;color:var(--muted);font-size:0.82rem;cursor:pointer;">← Back to cart</button>
+      </div>
+
+      <!-- Success -->
+      <div class="order-success" id="orderSuccess">
+        <span class="order-success-icon">🎉</span>
+        <h3>Order Sent!</h3>
+        <p>Your WhatsApp is opening with your full order. We'll confirm your bake slot shortly. <strong>Sinfully excited to bake for you!</strong></p>
+        <button onclick="resetOrder()" style="margin-top:1.2rem;background:var(--cinnamon);color:#fff;border:none;padding:10px 20px;border-radius:4px;cursor:pointer;font-weight:700;">Place Another Order</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CUSTOM ORDERS ── -->
+<section id="custom">
+  <div class="section-inner">
+    <span class="section-tag">Custom Orders</span>
+    <h2 class="section-title">Something Extra Special in Mind?</h2>
+    <p class="section-sub">From birthday boxes to bridal showers, corporate gifting to baby showers — we love bringing a little sinful sweetness to your special occasions. Every custom order is handled personally, just the way it should be.</p>
+
+    <div class="custom-box">
+      <h3>What to include in your enquiry</h3>
+      <ul>
+        <li>The occasion and your event date</li>
+        <li>How many rolls or boxes you need</li>
+        <li>Your flavour preferences or any theme ideas</li>
+        <li>Whether you need pick up or have a specific arrangement in mind</li>
+        <li>Any dietary requirements or allergies</li>
+      </ul>
+      <a href="https://wa.me/27825630046?text=Hi%20Sinnamon%20Rolls%20SA!%20I%27d%20love%20to%20enquire%20about%20a%20custom%20or%20special%20occasion%20order%20%F0%9F%8D%A5%0A%0AOccasion%3A%20%0ADate%3A%20%0AQuantity%3A%20%0AFlavours%3A%20%0ANotes%3A" target="_blank" class="btn">Send a Custom Enquiry on WhatsApp 🍥</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── ORDER POLICY ── -->
+<section id="policy">
+  <div class="policy-intro">
+    <span class="section-tag">Order Terms</span>
+    <h2 class="section-title">Pick Up & Order Policy</h2>
+    <p class="section-sub">Please read carefully before placing your order. By submitting an order, you acknowledge and accept the policies below.</p>
+  </div>
+
+  <div class="policy-banner">
+    <span class="pi">🍥</span>
+    <div>
+      <strong>Why we're strict:</strong> Every roll is baked fresh to your order using real ingredients and a lot of love. A missed pick up means product, time, and ingredients are lost and cannot be recovered. These policies help us respect our work and keep prices fair for everyone.
+    </div>
+  </div>
+
+  <div class="accordion">
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAcc(this)">
+        <span class="acc-num">01</span>
+        <h3>Pick Up Days & Time Slots</h3>
+        <span class="acc-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <p>All orders are baked fresh for your specific pick up slot.</p>
+          <p>You select your pick up day and time when placing your order. Your rolls are prepared and held specifically for that slot.</p>
+          <p><strong>Pick up slots:</strong></p>
+          <ul>
+            <li>Friday: 10:00am – 1:00pm</li>
+            <li>Friday: 4:00pm – 6:00pm</li>
+            <li>Saturday: 9:00am – 12:00pm</li>
+          </ul>
+          <p>The exact pick up address in Pretoria will be confirmed via WhatsApp once your order is accepted.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAcc(this)">
+        <span class="acc-num">02</span>
+        <h3>15-Minute Grace Period</h3>
+        <span class="acc-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <p>We offer a <strong>15-minute grace period</strong> after your selected pick up window closes.</p>
+          <p>If you arrive within those 15 minutes, your order will be waiting for you as scheduled.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAcc(this)">
+        <span class="acc-num">03</span>
+        <h3>If You're Running Late</h3>
+        <span class="acc-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <p>Life happens — we get it! If you know you'll be late, you <strong>must contact us on WhatsApp (082 563 0046) before your pick up time or within the 15-minute grace period.</strong></p>
+          <p>If you reach out in time and our schedule allows, we will do our best to:</p>
+          <ul>
+            <li>Hold your order for a later same day pick up, or</li>
+            <li>Work out an alternative solution where possible.</li>
+          </ul>
+          <p>Without communication, your order may be discarded once it is outside the safe holding window.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAcc(this)">
+        <span class="acc-num">04</span>
+        <h3>Missed Pick Up (No Show / No Call)</h3>
+        <span class="acc-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <p>A missed pick up is when you do not arrive within your selected time + 15-minute grace period <strong>and</strong> you do not contact us within that time frame.</p>
+          <p>In this case:</p>
+          <ul>
+            <li>Your order has already been baked and prepared just for you.</li>
+            <li>Because our products are perishable and made to order, they cannot be re-sold.</li>
+            <li>Once the holding window has passed, your order is discarded for food safety and quality reasons.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAcc(this)">
+        <span class="acc-num">05</span>
+        <h3>Refunds & Replacements</h3>
+        <span class="acc-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <p><strong>No refunds, re-bakes, or transfers to another date are available for missed pick ups (no show / no call).</strong></p>
+          <p>The work, ingredients, and time have already gone into your order, and it has been prepared specifically for you.</p>
+          <p>If your rolls do not meet our quality standard when you collect them, please let us know immediately so we can make it right.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAcc(this)">
+        <span class="acc-num">06</span>
+        <h3>Weather & Other Circumstances</h3>
+        <span class="acc-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <p>We understand that Joburg/Pretoria weather and traffic can be unpredictable. However, these do not automatically qualify for a refund or free replacement.</p>
+          <p><strong>As long as you contact us before or during your pick up window</strong>, we will do our best to assist with a solution.</p>
+          <p>If we don't hear from you until after your window and grace period have passed, the missed pick up policy above applies.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAcc(this)">
+        <span class="acc-num">07</span>
+        <h3>Last Minute Orders</h3>
+        <span class="acc-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <p>Pick up days have <strong>limited capacity</strong>. When a slot is full, we cannot accept more orders.</p>
+          <p>Orders placed within <strong>24 hours of your selected pick up day</strong> are considered last minute orders. We often begin production immediately, which means:</p>
+          <ul>
+            <li>We reserve the right not to issue a refund for last minute orders under any circumstances including change of mind, scheduling conflicts, or forgetting to collect.</li>
+            <li>By placing a last minute order, you acknowledge that you are taking one of our limited production spots and agree that the sale is final.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAcc(this)">
+        <span class="acc-num">08</span>
+        <h3>Courtesy Goodwill Gesture</h3>
+        <span class="acc-icon">+</span>
+      </div>
+      <div class="accordion-body">
+        <div class="accordion-content">
+          <p>On rare occasions and <strong>at our discretion only</strong>, we may offer a goodwill gesture (e.g., a discount on a future order) as a token of appreciation for loyal customers.</p>
+          <p>This is never guaranteed and does not replace the no refund policy for missed pick ups. We will always try to go the extra mile but only when it's within our means to do so.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="policy-note">Questions? WhatsApp us on <a href="https://wa.me/27825630046" style="color:var(--cinnamon);">082 563 0046</a> before placing your order — we're always happy to help. 🍥</p>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap">
+      <img class="about-img"
+        src="images/kitchen.jpg"
+        alt="The Schulz family behind Sinnamon Rolls SA" />
+      <div class="about-sticker"><em>🍥</em>Made with<br/>family love</div>
+    </div>
+    <div class="about-text">
+      <span class="section-tag">Our Story</span>
+      <h2 class="section-title">A Family Affair, Baked in Pretoria</h2>
+      <p class="section-sub">Sinnamon Rolls SA started the way all the best things do — with too much butter, a very messy kitchen, and a batch of cinnamon rolls that were <em>dangerously</em> good.</p>
+      <p class="section-sub" style="margin-top:0.8rem;">We're a family-run, small-batch home bakery in Pretoria. No mass production, no shortcuts, no frozen dough. Every single roll is hand-rolled, generously filled, and baked fresh to your order by us.</p>
+      <p class="section-sub" style="margin-top:0.8rem;">What started as a weekend kitchen experiment quickly turned into something our family, friends, and neighbours couldn't stop asking for. So here we are.</p>
+      <blockquote>"Sinfully Good" isn't just our tagline. It's our promise to you.</blockquote>
+      <a href="https://www.tiktok.com/@sinnamon.rolls.sa" target="_blank" rel="noopener" class="tiktok-tag"><i class="fa-brands fa-tiktok"></i> @sinnamon.rolls.sa on TikTok</a>
+      <a href="https://www.instagram.com/sinnamon.rolls.sa" target="_blank" rel="noopener" class="tiktok-tag" style="margin-top:0.6rem;"><i class="fa-brands fa-instagram"></i> @sinnamon.rolls.sa on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── PAYMENT ── -->
+<section id="payment" style="background: var(--parchment); padding: 70px 5%; text-align: center;">
+  <div style="max-width: 600px; margin: 0 auto;">
+    <span class="section-tag">Payment</span>
+    <h2 class="section-title" style="margin-bottom: 0.6rem;">How to Pay</h2>
+    <p style="color: var(--muted); margin-bottom: 2rem;">After placing your order via WhatsApp, pay securely using SnapScan. Scan the QR code below with your phone camera or the SnapScan app.</p>
+    <div style="background: var(--frosting); border-radius: 16px; display: inline-block; padding: 2rem 2.5rem; box-shadow: 0 4px 24px rgba(46,26,14,0.08);">
+      <img src="images/snapscan.png" alt="SnapScan QR code — Sinnamon Rolls SA" style="width: 220px; height: auto; display: block; margin: 0 auto 1rem;" />
+      <p style="font-size: 0.85rem; color: var(--muted); margin: 0;">Scan to pay · Powered by SnapScan</p>
+    </div>
+    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--muted);">Once payment is received, we will confirm your order and start baking. 🍥</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-name">🍥 Sinnamon Rolls SA</div>
+      <p>Gourmet, dessert-inspired, artisanal cinnamon rolls freshly baked to order in Pretoria, South Africa. Pre-orders open weekly via WhatsApp or online ordering.</p>
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/@sinnamon.rolls.sa" target="_blank" rel="noopener" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://wa.me/27825630046" target="_blank" rel="noopener" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/sinnamon.rolls.sa" target="_blank" rel="noopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#order">Order Online</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Order Info</h4>
+      <p>📅 Cutoff: <strong style="color:var(--gold)">Thursday</strong></p>
+      <p>📦 Pick up: <strong style="color:var(--gold)">Fri & Sat</strong></p>
+      <p>📍 Pretoria, Gauteng</p>
+      <p style="margin-top:0.8rem;">📱 <a href="https://wa.me/27825630046" style="color:var(--caramel);">082 563 0046</a></p>
+      <p><i class="fa-brands fa-tiktok" style="color:var(--caramel);"></i> <a href="https://www.tiktok.com/@sinnamon.rolls.sa" target="_blank" style="color:var(--caramel);">@sinnamon.rolls.sa</a></p>
+      <p><i class="fa-brands fa-instagram" style="color:var(--caramel);"></i> <a href="https://www.instagram.com/sinnamon.rolls.sa" target="_blank" style="color:var(--caramel);">@sinnamon.rolls.sa</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <small>&copy; 2026 Sinnamon Rolls SA · Pretoria, South Africa</small>
+    <small>Deploy free on <a href="https://netlify.com/drop" target="_blank" rel="noopener" style="color:var(--caramel);">Netlify Drop</a></small>
+  </div>
+</footer>
+
+<script>
+  // ── MENU DATA ──
+  const MENU = [
+    {
+      id: 1, category: 'indulgent',
+      name: 'Lotus Biscoff',
+      desc: 'Our fan favourite. Pillowy soft dough, Biscoff cream cheese frosting, caramel drizzle, crushed Biscoff crumble, and a whole Lotus biscuit on top. Absolutely sinful.',
+      price: 79, unit: 'single roll',
+      badge: '🔥 Bestseller', badgeClass: 'badge-popular',
+      img: 'images/biscoff.jpg',
+      soldOut: false
+    },
+    {
+      id: 2, category: 'indulgent',
+      name: 'Peppermint Crisp',
+      desc: 'Cream cheese frosting with a cool peppermint twist, topped with crushed Peppermint Crisp chocolate. Sweet, minty, and dangerously good.',
+      price: 79, unit: 'single roll',
+      badge: '✨ Fan Fave', badgeClass: 'badge-new',
+      img: 'images/peppermint.jpg',
+      soldOut: false
+    },
+    {
+      id: 3, category: 'classic',
+      name: 'Classic Cinnamon',
+      desc: 'The OG. Brown sugar, cinnamon butter filling, and a generous smear of cream cheese frosting. Simple, perfect, sinfully good.',
+      price: 49, unit: 'single roll',
+      badge: null, badgeClass: null,
+      img: 'images/classic.jpg',
+      soldOut: false
+    },
+    {
+      id: 5, category: 'indulgent',
+      name: 'Lotus Biscoff Minis',
+      desc: 'All the same sinful magic — Biscoff cream cheese frosting, caramel drizzle, crushed crumble — in bite-sized mini rolls. Perfect for sharing (or not).',
+      price: 79, unit: '3-pack',
+      badge: '🔥 Mini Pack', badgeClass: 'badge-popular',
+      img: 'images/biscoff.png',
+      soldOut: false
+    },
+    {
+      id: 6, category: 'indulgent',
+      name: 'Peppermint Crisp Minis',
+      desc: 'Cool mint cream cheese frosting and crushed Peppermint Crisp in adorable mini form. Three little bites of pure indulgence.',
+      price: 79, unit: '3-pack',
+      badge: '✨ Mini Pack', badgeClass: 'badge-new',
+      img: 'images/peppermint.png',
+      soldOut: false
+    },
+    {
+      id: 7, category: 'classic',
+      name: 'Classic Cinnamon Minis',
+      desc: 'The OG in mini form. Brown sugar, cinnamon butter, cream cheese frosting — three perfectly petite rolls for the same price as one large.',
+      price: 49, unit: '3-pack',
+      badge: '🍥 Mini Pack', badgeClass: null,
+      img: 'images/classic.png',
+      soldOut: false
+    },
+    {
+      id: 8, category: 'box',
+      name: 'Custom Box of 4',
+      desc: 'Mix and match any 4 rolls — singles or minis — your choice of flavours. Specify your combination in the notes field at checkout. Perfect for sharing (or keeping to yourself).',
+      price: 299, unit: '4-roll box',
+      badge: '🎁 Mix & Match', badgeClass: 'badge-new',
+      img: 'images/box4.jpg',
+      soldOut: false
+    },
+    {
+      id: 9, category: 'box',
+      name: 'Custom Box of 6',
+      desc: 'Six rolls, your way. Mix and match any flavours — singles, minis, or a combination. Specify your selection in the notes at checkout. Great for gifting or a serious treat.',
+      price: 429, unit: '6-roll box',
+      badge: '🎁 Mix & Match', badgeClass: 'badge-new',
+      img: 'images/box6.jpg',
+      soldOut: false
+    },
+    {
+      id: 4, category: 'seasonal',
+      name: 'Limited Edition Drop',
+      desc: 'A new limited edition flavour drops every month — follow us on TikTok @sinnamon.rolls.sa so you never miss the reveal!',
+      price: 85, unit: 'single roll',
+      badge: '🍂 Monthly Drop', badgeClass: 'badge-seasonal',
+      img: 'images/seasonal.jpg',
+      soldOut: false, comingSoon: true
+    },
+  ];
+
+  // ── STATE ──
+  let cart = {}; // { id: qty }
+  let activeFilter = 'all';
+
+  // ── RENDER MENU ──
+  function renderMenu() {
+    const grid = document.getElementById('menuGrid');
+    const filtered = activeFilter === 'all' ? MENU : MENU.filter(i => i.category === activeFilter);
+
+    grid.innerHTML = filtered.map(item => {
+      const qty = cart[item.id] || 0;
+      return `
+        <div class="menu-card${item.comingSoon ? ' sold-out' : ''}">
+          <img class="menu-card-img" src="${item.img}" alt="${item.name}" loading="lazy" />
+          <div class="menu-card-body">
+            <div class="menu-card-top">
+              <h3>${item.name}</h3>
+              ${item.badge ? `<span class="badge ${item.badgeClass}">${item.badge}</span>` : ''}
+              ${item.comingSoon ? '<span class="badge badge-sold">Coming Soon</span>' : ''}
+            </div>
+            <p>${item.desc}</p>
+            <div class="menu-card-footer">
+              <div class="price">R${item.price} <small>/ ${item.unit}</small></div>
+              ${item.comingSoon
+                ? '<button class="add-btn" disabled>Coming Soon</button>'
+                : qty === 0
+                  ? `<button class="add-btn" onclick="addToCart(${item.id})">+ Add</button>`
+                  : `<div class="qty-control">
+                       <button class="qty-btn" onclick="changeQty(${item.id}, -1)">−</button>
+                       <span class="qty-display">${qty}</span>
+                       <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+                     </div>`
+              }
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  function filterMenu(cat, btn) {
+    activeFilter = cat;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderMenu();
+  }
+
+  // ── CART LOGIC ──
+  function addToCart(id) {
+    cart[id] = (cart[id] || 0) + 1;
+    renderMenu();
+    renderCart();
+  }
+
+  function changeQty(id, delta) {
+    cart[id] = (cart[id] || 0) + delta;
+    if (cart[id] <= 0) delete cart[id];
+    renderMenu();
+    renderCart();
+  }
+
+  function renderCart() {
+    const ids = Object.keys(cart);
+    const countEl = document.getElementById('cartCount');
+    const emptyEl = document.getElementById('cartEmpty');
+    const itemsEl = document.getElementById('cartItems');
+    const footerEl = document.getElementById('cartFooter');
+
+
+    const totalQty = ids.reduce((s, id) => s + cart[id], 0);
+    const total    = ids.reduce((s, id) => {
+      const item = MENU.find(m => m.id === parseInt(id));
+      return s + (item ? item.price * cart[id] : 0);
+    }, 0);
+
+    // Nav badge
+    if (totalQty > 0) {
+      countEl.textContent = totalQty;
+      countEl.classList.add('visible');
+    } else {
+      countEl.classList.remove('visible');
+    }
+    document.getElementById('cartItemCount').textContent = `${totalQty} item${totalQty !== 1 ? 's' : ''}`;
+
+    if (ids.length === 0) {
+      emptyEl.style.display = 'block';
+      itemsEl.style.display = 'none';
+      footerEl.style.display = 'none';
+    } else {
+      emptyEl.style.display = 'none';
+      itemsEl.style.display = 'block';
+      footerEl.style.display = 'block';
+
+      itemsEl.innerHTML = ids.map(id => {
+        const item = MENU.find(m => m.id === parseInt(id));
+        if (!item) return '';
+        return `
+          <div class="cart-item">
+            <div class="cart-item-info">
+              <div class="cart-item-name">${item.name}</div>
+              <div class="cart-item-unit">${item.unit}</div>
+            </div>
+            <div class="cart-item-right">
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty(${item.id}, -1)">−</button>
+                <span class="qty-display">${cart[id]}</span>
+                <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+              </div>
+              <div class="cart-item-price">R${item.price * cart[id]}</div>
+            </div>
+          </div>`;
+      }).join('');
+
+      document.getElementById('cartSubtotal').textContent = 'R' + total;
+      document.getElementById('cartTotal').textContent = 'R' + total;
+    }
+  }
+
+  // ── CART SIDEBAR TOGGLE ──
+  function openCart() {
+    document.getElementById('cartSidebar').classList.add('open');
+  }
+
+  // ── CHECKOUT ──
+  function showCheckout() {
+    document.getElementById('cartFooter').style.display = 'none';
+    document.getElementById('checkoutForm').classList.add('visible');
+  }
+
+  function hideCheckout() {
+    document.getElementById('checkoutForm').classList.remove('visible');
+    document.getElementById('cartFooter').style.display = 'block';
+  }
+
+  function closeCheckout() {
+    hideCheckout();
+  }
+
+  function sendViaWhatsApp() {
+    const name  = document.getElementById('cfName').value.trim();
+    const phone = document.getElementById('cfPhone').value.trim();
+    const day   = document.getElementById('cfDay').value;
+    const notes = document.getElementById('cfNotes').value.trim();
+    const policyAccepted = document.getElementById('cfPolicy').checked;
+    if (!name || !phone || !day) {
+      alert('Please fill in your name, WhatsApp number, and pick up slot.');
+      return;
+    }
+    if (!policyAccepted) {
+      alert('Please read and accept the pick up and order policy before placing your order.');
+      return;
+    }
+    const orderLines = Object.keys(cart).map(id => {
+  
+      const item = MENU.find(m => m.id === Number(id));
+      return `• ${item.name} x${cart[id]} — R${item.price * cart[id]}`;
+    }).join('\n');
+    const total = Object.keys(cart).reduce((sum, id) => {
+      const item = MENU.find(m => m.id === Number(id));
+      return sum + item.price * cart[id];
+    }, 0);
+    const msg = `SINNAMON ROLLS SA - New Order\n\nName: ${name}\nWhatsApp: ${phone}\nPick up: ${day}\n\nOrder:\n${orderLines}\n\nTotal: R${total}\n\nNotes: ${notes || 'None'}\n\nPlease confirm my order. Thank you! 🍥`;
+    const url = `https://wa.me/27825630046?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+    closeCheckout();
+    cart = {};
+    renderMenu();
+    renderCart();
+  }
+
+  renderMenu();
+  renderCart();
+
+  function scrollToOrder() {
+    document.getElementById('cartSidebar').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function toggleNav() {
+    const nav = document.getElementById('navLinks');
+    const isVisible = nav.style.display === 'flex';
+    if (isVisible) {
+      nav.style.display = 'none';
+    } else {
+      nav.style.cssText = 'display:flex; flex-direction:column; position:fixed; top:70px; left:0; right:0; z-index:300; background:#1a0d05; padding:0.5rem 0; box-shadow:0 4px 20px rgba(0,0,0,0.3); list-style:none; gap:0;';
+    }
+  }
+
+  function closeNav() {
+    document.getElementById('navLinks').style.display = 'none';
+  }
+
+  function toggleAcc(header) {
+    const item = header.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.accordion-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  function toggleNav() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
